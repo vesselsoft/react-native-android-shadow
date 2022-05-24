@@ -4,22 +4,15 @@ import android.graphics.Color;
 
 import androidx.annotation.NonNull;
 
-import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.annotations.ReactProp;
-import com.facebook.react.uimanager.annotations.ReactPropGroup;
 
 import net.orandja.shadowlayout.ShadowLayout;
 
 public class AndroidShadowViewManager extends ViewGroupManager<ShadowLayout> {
     public static final String REACT_CLASS = "AndroidShadowView";
-    private ReactApplicationContext reactContext;
-
-    public AndroidShadowViewManager(ReactApplicationContext reactContext) {
-        this.reactContext = reactContext;
-    }
 
     @NonNull
     @Override
