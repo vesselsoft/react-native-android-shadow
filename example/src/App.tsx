@@ -1,12 +1,14 @@
 import * as React from 'react';
 
-import { StyleSheet, View } from 'react-native';
-import { AndroidShadowView } from 'react-native-android-shadow';
+import { StyleSheet, Text, View } from 'react-native';
+import AndroidShadowView from 'react-native-android-shadow';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <AndroidShadowViewManager color="#32a852" style={styles.box} />
+      <AndroidShadowView style={styles.box}>
+        <Text>tesss</Text>
+      </AndroidShadowView>
     </View>
   );
 }
