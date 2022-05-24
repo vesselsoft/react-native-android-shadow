@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "react-native-shadow-android": ["./src/index"]
+      "@vesselsoft/react-native-shadow": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

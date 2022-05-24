@@ -1,17 +1,17 @@
-# react-native-shadow-android
+# @vesselsoft/react-native-shadow
 
 React Native Shadow View for Android
 
 ## Installation
 
 ```sh
-npm install react-native-shadow-android
+npm install @vesselsoft/react-native-shadow
 ```
 
 ## Usage
 
 ```js
-import { AndroidShadowView } from "react-native-shadow-android";
+import { AndroidShadowView } from "@vesselsoft/react-native-shadow";
 
 // ...
 

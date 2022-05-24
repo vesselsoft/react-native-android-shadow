@@ -1,6 +1,6 @@
 {
-  "name": "react-native-shadow-android-example",
-  "description": "Example app for react-native-shadow-android",
+  "name": "@vesselsoft/react-native-shadow-example",
+  "description": "Example app for @vesselsoft/react-native-shadow",
   "version": "0.0.1",
   "private": true,
   "scripts": {
