@@ -5,7 +5,7 @@ React Native Shadow View for Android based on [L-Briand/ShadowLayout](https://gi
 ## Installation
 
 ```sh
-yarn install @vesselsoft/react-native-shadow
+yarn add @vesselsoft/react-native-shadow
 ```
 
 ## Usage
