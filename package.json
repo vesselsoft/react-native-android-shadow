@@ -31,6 +31,7 @@
     "pods": "cd example && pod-install --quiet",
     "bootstrap": "yarn example && yarn && yarn pods"
   },
+  "private": false,
   "keywords": [
     "react-native",
     "ios",
