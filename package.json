@@ -1,6 +1,6 @@
 {
   "name": "@vesselsoft/react-native-shadow",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "React Native Shadow View for Android",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
