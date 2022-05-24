@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { StyleSheet, Text, View } from 'react-native';
-import AndroidShadowView from 'react-native-android-shadow';
+import AndroidShadowView from 'react-native-shadow-android';
 
 export default function App() {
   return (

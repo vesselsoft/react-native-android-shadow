@@ -1,5 +1,5 @@
 {
-  "name": "react-native-android-shadow",
+  "name": "react-native-shadow-android",
   "version": "0.1.0",
   "description": "React Native Shadow View for Android",
   "main": "lib/commonjs/index",
@@ -13,7 +13,7 @@
     "android",
     "ios",
     "cpp",
-    "react-native-android-shadow.podspec",
+    "react-native-shadow-android.podspec",
     "!lib/typescript/example",
     "!android/build",
     "!ios/build",
@@ -36,13 +36,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/muhamad-rizki/react-native-android-shadow",
+  "repository": "https://github.com/muhamad-rizki/react-native-shadow-android",
   "author": "Muhamad Rizki <muhrizkie88@gmail.com> (https://github.com/muhamad-rizki)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/muhamad-rizki/react-native-android-shadow/issues"
+    "url": "https://github.com/muhamad-rizki/react-native-shadow-android/issues"
   },
-  "homepage": "https://github.com/muhamad-rizki/react-native-android-shadow#readme",
+  "homepage": "https://github.com/muhamad-rizki/react-native-shadow-android#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
