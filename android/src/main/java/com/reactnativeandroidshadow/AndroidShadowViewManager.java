@@ -17,7 +17,7 @@ public class AndroidShadowViewManager extends ViewGroupManager<ShadowLayout> {
     public static final String REACT_CLASS = "AndroidShadowView";
     private ReactApplicationContext reactContext;
 
-    public ShadowViewManager(ReactApplicationContext reactContext) {
+    public AndroidShadowViewManager(ReactApplicationContext reactContext) {
         this.reactContext = reactContext;
     }
 
