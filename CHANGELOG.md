@@ -1,3 +1,11 @@
+## [0.1.6](https://github.com/vesselsoft/react-native-android-shadow/compare/v0.1.5...v0.1.6) (2022-06-08)
+
+
+### Bug Fixes
+
+* separate ShadowView and ShadowText component ([758c58e](https://github.com/vesselsoft/react-native-android-shadow/commit/758c58e66b9f71b3e9f602a36c94adee7d34097e))
+* shadowColor with opacity value ([a8c08b5](https://github.com/vesselsoft/react-native-android-shadow/commit/a8c08b52da54643bd1fefb6208f6277f5dc1992c))
+
 ## [0.1.5](https://github.com/vesselsoft/react-native-android-shadow/compare/v0.1.4...v0.1.5) (2022-05-24)
 
 
