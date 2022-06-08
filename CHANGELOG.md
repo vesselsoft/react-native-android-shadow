@@ -1,3 +1,10 @@
+## [0.1.7](https://github.com/vesselsoft/react-native-android-shadow/compare/v0.1.6...v0.1.7) (2022-06-08)
+
+
+### Bug Fixes
+
+* ShadowText component props type ([be9de51](https://github.com/vesselsoft/react-native-android-shadow/commit/be9de51692fe05266d54020d68febe33beb830aa))
+
 ## [0.1.6](https://github.com/vesselsoft/react-native-android-shadow/compare/v0.1.5...v0.1.6) (2022-06-08)
 
 
