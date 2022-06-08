@@ -1,12 +1,11 @@
-import React from 'react';
 import {
   Platform,
   requireNativeComponent,
   UIManager,
   ViewProps,
-  View,
-  processColor,
 } from 'react-native';
+import ShadowView from './ShadowView';
+import ShadowText from './ShadowText';
 
 const LINKING_ERROR =
   `The package '@vesselsoft/react-native-shadow' doesn't seem to be linked. Make sure: \n\n` +
@@ -16,39 +15,14 @@ const LINKING_ERROR =
 
 const ComponentName = 'AndroidShadowView';
 
-const ShadowDrop =
-  Platform.OS === 'android'
-    ? UIManager.getViewManagerConfig(ComponentName) != null
-      ? requireNativeComponent<ViewProps>(ComponentName)
-      : () => {
-          throw new Error(LINKING_ERROR);
-        }
-    : View;
+/**
+ * @deprecated ShadowDrop only available for Android
+ */
+const ShadowDrop: any =
+  UIManager.getViewManagerConfig(ComponentName) != null
+    ? requireNativeComponent<ViewProps>(ComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
 
-const AndroidShadowView = React.memo<ViewProps>((props: any) => {
-  const _props = Object.assign({}, props);
-
-  if (Platform.OS === 'android' && props.style) {
-    _props.shadow = {};
-
-    if (props.style.shadowColor) {
-      _props.shadow.shadowColor = processColor(props.style.shadowColor);
-    }
-
-    if (props.style.shadowOffset) {
-      _props.shadow.shadowOffset = props.style.shadowOffset;
-    }
-
-    if (props.style.shadowOpacity) {
-      _props.shadow.shadowOpacity = props.style.shadowOpacity;
-    }
-
-    if (props.style.shadowRadius) {
-      _props.shadow.shadowRadius = props.style.shadowRadius;
-    }
-  }
-
-  return React.createElement(ShadowDrop as any, _props);
-});
-
-export default AndroidShadowView;
+export { ShadowView, ShadowText, ShadowDrop };

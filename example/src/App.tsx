@@ -1,14 +1,14 @@
 import * as React from 'react';
 
 import { StyleSheet, Text, View } from 'react-native';
-import AndroidShadowView from '@vesselsoft/react-native-shadow';
+import ShadowView from 'src/ShadowView';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <AndroidShadowView style={styles.box}>
+      <ShadowView style={styles.box}>
         <Text>tesss</Text>
-      </AndroidShadowView>
+      </ShadowView>
     </View>
   );
 }
