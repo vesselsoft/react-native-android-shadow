@@ -12,11 +12,11 @@ yarn add @vesselsoft/react-native-shadow
 
 ```js
 import { Text } from 'react-native';
-import AndroidShadowView from '@vesselsoft/react-native-shadow';
+import { ShadowView, ShadowText } from '@vesselsoft/react-native-shadow';
 
 // ...
 
-<AndroidShadowView
+<ShadowView
   style={{
     shadowColor: '#000',
     shadowOffset: {
@@ -27,8 +27,8 @@ import AndroidShadowView from '@vesselsoft/react-native-shadow';
     shadowRadius: 1.0,
   }}
 >
-  <Text>Hello World!</Text>
-</AndroidShadowView>;
+  <ShadowText>Hello World!</ShadowText>
+</ShadowView>;
 ```
 
 ## Contributing
