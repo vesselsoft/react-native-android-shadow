@@ -1,8 +1,8 @@
 import React from 'react';
-import { Platform, processColor, Text, ViewProps } from 'react-native';
+import { Platform, processColor, Text, TextProps } from 'react-native';
 import { ShadowDrop } from './index';
 
-const ShadowText = React.memo<ViewProps>((props: any) => {
+const ShadowText = React.memo<TextProps>((props: any) => {
   if (Platform.OS === 'android' && props.style) {
     const shadow: { [key: string]: any } = {};
 
