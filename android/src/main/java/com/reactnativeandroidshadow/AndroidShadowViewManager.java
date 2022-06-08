@@ -28,15 +28,19 @@ public class AndroidShadowViewManager extends ViewGroupManager<ShadowLayout> {
 
     @ReactProp(name = "shadow")
     public void setShadow(ShadowLayout view, ReadableMap style) {
-        double shadowOpacity = 1;
+        double shadowOpacity = -1;
         if (style.hasKey("shadowOpacity")) {
             shadowOpacity = style.getDouble("shadowOpacity");
         }
 
         if (style.hasKey("shadowColor")) {
             int shadowColor = style.getInt("shadowColor");
-            view.setShadow_color(Color.argb((int) Math.round(shadowOpacity * 255.0),
-                    Color.red(shadowColor), Color.green(shadowColor), Color.blue(shadowColor)));
+            if (shadowOpacity >= 0) {
+                view.setShadow_color(Color.argb((int) Math.round(shadowOpacity * 255.0),
+                        Color.red(shadowColor), Color.green(shadowColor), Color.blue(shadowColor)));
+            } else {
+                view.setShadow_color(shadowColor);
+            }
         }
 
         if (style.hasKey("shadowOffset")) {
