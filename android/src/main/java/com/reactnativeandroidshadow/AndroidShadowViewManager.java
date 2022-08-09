@@ -28,6 +28,30 @@ public class AndroidShadowViewManager extends ViewGroupManager<ShadowLayout> {
 
     @ReactProp(name = "shadow")
     public void setShadow(ShadowLayout view, ReadableMap style) {
+        if (style.hasKey("enableCSSScale")) {
+            view.setShadow_with_css_scale(style.getBoolean("enableCSSScale"));
+        }
+
+        if (style.hasKey("enableDpiScale")) {
+            view.setShadow_with_dpi_scale(style.getBoolean("enableDpiScale"));
+        }
+
+        if (style.hasKey("enableShadowWithColor")) {
+            view.setShadow_with_color(style.getBoolean("enableShadowWithColor"));
+        }
+
+        if (style.hasKey("enableShadowWithContent")) {
+            view.setShadow_with_content(style.getBoolean("enableShadowWithContent"));
+        }
+
+        if (style.hasKey("enableCastOnlyBackground")) {
+            view.setShadow_cast_only_background(style.getBoolean("enableCastOnlyBackground"));
+        }
+
+        if (style.hasKey("shadowDownScale")) {
+            view.setShadow_downscale((float) style.getDouble("shadowDownScale"));
+        }
+
         double shadowOpacity = -1;
         if (style.hasKey("shadowOpacity")) {
             shadowOpacity = style.getDouble("shadowOpacity");
