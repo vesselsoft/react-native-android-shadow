@@ -1,3 +1,10 @@
+## [0.2.2](https://github.com/vesselsoft/react-native-android-shadow/compare/v0.2.1...v0.2.2) (2022-08-09)
+
+
+### Bug Fixes
+
+* disable shadow element if shadow style is not provided ([8d20b77](https://github.com/vesselsoft/react-native-android-shadow/commit/8d20b771d489157c3d931d27446cbf01b7341749))
+
 ## [0.2.1](https://github.com/vesselsoft/react-native-android-shadow/compare/v0.2.0...v0.2.1) (2022-08-09)
 
 
