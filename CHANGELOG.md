@@ -1,3 +1,10 @@
+# [0.2.0](https://github.com/vesselsoft/react-native-android-shadow/compare/v0.1.7...v0.2.0) (2022-08-09)
+
+
+### Features
+
+* add additional shadow options ([fff122e](https://github.com/vesselsoft/react-native-android-shadow/commit/fff122e614e46b60c6af635706a616c865b33367))
+
 ## [0.1.7](https://github.com/vesselsoft/react-native-android-shadow/compare/v0.1.6...v0.1.7) (2022-06-08)
 
 
