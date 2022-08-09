@@ -11,6 +11,16 @@ type ShadowOptions = {
   shadowDownScale: number;
 };
 
+const hasKeys = (data: { [key: string]: any }, keys: string[]) => {
+  for (let index = 0; index < keys.length; index += 1) {
+    const key = keys[index];
+    if (data.hasOwnProperty(key)) {
+      return true;
+    }
+  }
+  return false;
+};
+
 function withShadow<TPropsType extends object>(
   Component:
     | React.FunctionComponent<TPropsType>
@@ -22,7 +32,16 @@ function withShadow<TPropsType extends object>(
   options?: ShadowOptions
 ) {
   return React.memo<TPropsType>((props: any) => {
-    if (Platform.OS === 'android' && props.style) {
+    if (
+      Platform.OS === 'android' &&
+      props.style &&
+      hasKeys(props.style, [
+        'shadowColor',
+        'shadowOffset',
+        'shadowOpacity',
+        'shadowRadius',
+      ])
+    ) {
       const shadow: { [key: string]: any } = options ? options : {};
 
       if (props.style.shadowColor) {
