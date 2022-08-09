@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/vesselsoft/react-native-android-shadow/compare/v0.2.0...v0.2.1) (2022-08-09)
+
+
+### Bug Fixes
+
+* shadow not shown & wrong hoc types ([929c6cf](https://github.com/vesselsoft/react-native-android-shadow/commit/929c6cfc9ab66425bddc753ba9dd6122b837e29e))
+
 # [0.2.0](https://github.com/vesselsoft/react-native-android-shadow/compare/v0.1.7...v0.2.0) (2022-08-09)
 
 
