@@ -1,26 +1,6 @@
 import React from 'react';
-import {
-  Platform,
-  processColor,
-  requireNativeComponent,
-  UIManager,
-  ViewProps,
-} from 'react-native';
-
-const LINKING_ERROR =
-  `The package '@vesselsoft/react-native-shadow' doesn't seem to be linked. Make sure: \n\n` +
-  Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
-  '- You rebuilt the app after installing the package\n' +
-  '- You are not using Expo managed workflow\n';
-
-const ComponentName = 'AndroidShadowView';
-
-const ShadowDrop: any =
-  UIManager.getViewManagerConfig(ComponentName) != null
-    ? requireNativeComponent<ViewProps>(ComponentName)
-    : () => {
-        throw new Error(LINKING_ERROR);
-      };
+import { Platform, processColor } from 'react-native';
+import ShadowDrop from './ShadowDrop';
 
 type ShadowOptions = {
   enableCSSScale: boolean;
@@ -35,18 +15,21 @@ function withShadow<TPropsType extends object>(
   Component:
     | React.FunctionComponent<TPropsType>
     | React.ClassicComponentClass<TPropsType>
-    | React.NamedExoticComponent<TPropsType>,
+    | React.NamedExoticComponent<TPropsType>
+    | React.ComponentClass<TPropsType>
+    | React.ForwardRefExoticComponent<TPropsType>
+    | any,
   options?: ShadowOptions
 ) {
   return React.memo<TPropsType>((props: any) => {
     if (Platform.OS === 'android' && props.style) {
       const shadow: { [key: string]: any } = options ? options : {};
 
-      if (props.style.shadowColor >= 0) {
+      if (props.style.shadowColor) {
         shadow.shadowColor = processColor(props.style.shadowColor);
       }
 
-      if (props.style.shadowOffset >= 0) {
+      if (props.style.shadowOffset) {
         shadow.shadowOffset = props.style.shadowOffset;
       }
 
