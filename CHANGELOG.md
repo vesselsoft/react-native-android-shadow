@@ -1,3 +1,10 @@
+## [0.2.3](https://github.com/vesselsoft/react-native-android-shadow/compare/v0.2.2...v0.2.3) (2022-08-12)
+
+
+### Bug Fixes
+
+* add ref forwarding ([8d68901](https://github.com/vesselsoft/react-native-android-shadow/commit/8d689019e02a80e41b73e4de248ca11a882f033a))
+
 ## [0.2.2](https://github.com/vesselsoft/react-native-android-shadow/compare/v0.2.1...v0.2.2) (2022-08-09)
 
 
