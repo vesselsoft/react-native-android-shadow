@@ -21,54 +21,57 @@ const hasKeys = (data: { [key: string]: any }, keys: string[]) => {
   return false;
 };
 
-function withShadow<TPropsType extends object>(
+function withShadow<TComponent, TPropsType>(
   Component:
     | React.FunctionComponent<TPropsType>
     | React.ClassicComponentClass<TPropsType>
     | React.NamedExoticComponent<TPropsType>
     | React.ComponentClass<TPropsType>
     | React.ForwardRefExoticComponent<TPropsType>
+    | React.ComponentType<TPropsType>
     | any,
   options?: ShadowOptions
 ) {
-  return React.memo<TPropsType>((props: any) => {
-    if (
-      Platform.OS === 'android' &&
-      props.style &&
-      hasKeys(props.style, [
-        'shadowColor',
-        'shadowOffset',
-        'shadowOpacity',
-        'shadowRadius',
-      ])
-    ) {
-      const shadow: { [key: string]: any } = options ? options : {};
+  return React.forwardRef<TComponent | null | undefined, TPropsType>(
+    (props: any, ref) => {
+      if (
+        Platform.OS === 'android' &&
+        props.style &&
+        hasKeys(props.style, [
+          'shadowColor',
+          'shadowOffset',
+          'shadowOpacity',
+          'shadowRadius',
+        ])
+      ) {
+        const shadow: { [key: string]: any } = options ? options : {};
 
-      if (props.style.shadowColor) {
-        shadow.shadowColor = processColor(props.style.shadowColor);
+        if (props.style.shadowColor) {
+          shadow.shadowColor = processColor(props.style.shadowColor);
+        }
+
+        if (props.style.shadowOffset) {
+          shadow.shadowOffset = props.style.shadowOffset;
+        }
+
+        if (props.style.shadowOpacity >= 0) {
+          shadow.shadowOpacity = props.style.shadowOpacity;
+        }
+
+        if (props.style.shadowRadius >= 0) {
+          shadow.shadowRadius = props.style.shadowRadius;
+        }
+
+        return (
+          <ShadowDrop shadow={shadow}>
+            {React.createElement(Component, { ...props, ref })}
+          </ShadowDrop>
+        );
       }
 
-      if (props.style.shadowOffset) {
-        shadow.shadowOffset = props.style.shadowOffset;
-      }
-
-      if (props.style.shadowOpacity >= 0) {
-        shadow.shadowOpacity = props.style.shadowOpacity;
-      }
-
-      if (props.style.shadowRadius >= 0) {
-        shadow.shadowRadius = props.style.shadowRadius;
-      }
-
-      return (
-        <ShadowDrop shadow={shadow}>
-          {React.createElement(Component, props)}
-        </ShadowDrop>
-      );
+      return React.createElement(Component, { ...props, ref });
     }
-
-    return React.createElement(Component, props);
-  });
+  );
 }
 
 export default withShadow;

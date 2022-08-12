@@ -1,12 +1,13 @@
+import { ShadowView } from '@vesselsoft/react-native-shadow';
 import * as React from 'react';
 
 import { StyleSheet, Text, View } from 'react-native';
-import ShadowView from 'src/ShadowView';
 
 export default function App() {
+  const ref = React.useRef<View>();
   return (
     <View style={styles.container}>
-      <ShadowView style={styles.box}>
+      <ShadowView ref={ref} style={styles.box}>
         <Text>tesss</Text>
       </ShadowView>
     </View>
