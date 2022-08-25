@@ -3,12 +3,13 @@ import { Platform, processColor } from 'react-native';
 import ShadowDrop from './ShadowDrop';
 
 type ShadowOptions = {
-  enableCSSScale: boolean;
-  enableDpiScale: boolean;
-  enableShadowWithColor: boolean;
-  enableShadowWithContent: boolean;
-  enableCastOnlyBackground: boolean;
-  shadowDownScale: number;
+  enableCSSScale?: boolean;
+  enableDpiScale?: boolean;
+  enableShadowWithColor?: boolean;
+  enableShadowWithContent?: boolean;
+  enableCastOnlyBackground?: boolean;
+  shadowDownScale?: number;
+  patchToParents?: string[];
 };
 
 const hasKeys = (data: { [key: string]: any }, keys: string[]) => {
@@ -62,8 +63,27 @@ function withShadow<TComponent, TPropsType>(
           shadow.shadowRadius = props.style.shadowRadius;
         }
 
+        // this is to workaround margin styling bugs on children shadow view,
+        // we pass margin style to parent shadow view
+        const styleToPatches = ['margin'];
+        if (options?.patchToParents) {
+          options.patchToParents.forEach((x) => {
+            styleToPatches.push(x);
+          });
+        }
+        const patchToParentStyling: { [key: string]: any } = {};
+
+        Object.keys(props.style)
+          .filter((x) =>
+            x.match(new RegExp(`^(${styleToPatches.join('|')})`, 'i'))
+          )
+          .forEach((x) => {
+            patchToParentStyling[x] = props.style[x];
+            delete props.style[x];
+          });
+
         return (
-          <ShadowDrop shadow={shadow}>
+          <ShadowDrop shadow={shadow} style={patchToParentStyling}>
             {React.createElement(Component, { ...props, ref })}
           </ShadowDrop>
         );
