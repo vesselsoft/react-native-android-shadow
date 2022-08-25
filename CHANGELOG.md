@@ -1,3 +1,10 @@
+## [0.2.4](https://github.com/vesselsoft/react-native-android-shadow/compare/v0.2.3...v0.2.4) (2022-08-25)
+
+
+### Bug Fixes
+
+* margin style bugs on children shadow component ([83e616f](https://github.com/vesselsoft/react-native-android-shadow/commit/83e616fa5f618e65aa632aa0996a0e0537905730))
+
 ## [0.2.3](https://github.com/vesselsoft/react-native-android-shadow/compare/v0.2.2...v0.2.3) (2022-08-12)
 
 
