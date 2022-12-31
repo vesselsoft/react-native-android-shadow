@@ -1,3 +1,11 @@
+## [0.2.5](https://github.com/vesselsoft/react-native-android-shadow/compare/v0.2.4...v0.2.5) (2022-12-31)
+
+
+### Bug Fixes
+
+* android compile sdk version ([3c7bda7](https://github.com/vesselsoft/react-native-android-shadow/commit/3c7bda75d3d71305196200238bd9d2b7336c60fe))
+* disable render shadow component if properties not set ([edba89a](https://github.com/vesselsoft/react-native-android-shadow/commit/edba89a700742119f38ede3d1dd91128676e7b15))
+
 ## [0.2.4](https://github.com/vesselsoft/react-native-android-shadow/compare/v0.2.3...v0.2.4) (2022-08-25)
 
 
