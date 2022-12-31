@@ -63,6 +63,10 @@ function withShadow<TComponent, TPropsType>(
           shadow.shadowRadius = props.style.shadowRadius;
         }
 
+        if (Object.keys(shadow).length <= 0) {
+          return React.createElement(Component, { ...props, ref });
+        }
+
         // this is to workaround margin styling bugs on children shadow view,
         // we pass margin style to parent shadow view
         const styleToPatches = ['margin'];
